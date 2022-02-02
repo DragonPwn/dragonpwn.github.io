@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Dragon Pwn</title>
+    <link>https://dragonpwn.github.io/categories/python/</link>
+    <description>Recent content in python on Dragon Pwn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dragonpwn.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PickelC2-Bot</title>
+      <link>https://dragonpwn.github.io/blog/picklec2-bot/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/blog/picklec2-bot/</guid>
+      <description>PickleC2-Bot This discord bot will help you to control your target through PickleC2
+Download
+WHAT&amp;rsquo;s a PickleC2? PickleC2 is a simple C2 framework written in python3 used to help the community in Penetration Testers in their red teaming engagements.</description>
+    </item>
+    
+  </channel>
+</rss>

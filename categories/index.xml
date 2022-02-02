@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Dragon Pwn</title>
+    <link>https://dragonpwn.github.io/categories/</link>
+    <description>Recent content in Categories on Dragon Pwn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 17 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dragonpwn.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVEs</title>
+      <link>https://dragonpwn.github.io/categories/cves/</link>
+      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/categories/cves/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RCE</title>
+      <link>https://dragonpwn.github.io/categories/rce/</link>
+      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/categories/rce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://dragonpwn.github.io/categories/web/</link>
+      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/categories/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sql Injection</title>
+      <link>https://dragonpwn.github.io/categories/sql-injection/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/categories/sql-injection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://dragonpwn.github.io/categories/python/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RedTeaming</title>
+      <link>https://dragonpwn.github.io/categories/redteaming/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/categories/redteaming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Active-Directory</title>
+      <link>https://dragonpwn.github.io/categories/active-directory/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/categories/active-directory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://dragonpwn.github.io/categories/network/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/categories/network/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

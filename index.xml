@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dragon Pwn</title>
+    <link>https://dragonpwn.github.io/</link>
+    <description>Recent content on Dragon Pwn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 01 Feb 2022 10:20:19 +0600</lastBuildDate><atom:link href="https://dragonpwn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DragonPwn</title>
+      <link>https://dragonpwn.github.io/author/dragon_pwn/</link>
+      <pubDate>Tue, 01 Feb 2022 10:20:19 +0600</pubDate>
+      
+      <guid>https://dragonpwn.github.io/author/dragon_pwn/</guid>
+      <description>Hi There! Call Me DragonPwn ☄  &amp;ldquo;POWER COMES IN RESPONSE TO A NEED, NOT DESIRE. YOU HAVE TO CREATE THAT NEED.</description>
+    </item>
+    
+    <item>
+      <title>Log4Shell (CVE-2021-44228)</title>
+      <link>https://dragonpwn.github.io/blog/log4shellcve-2021-44228/</link>
+      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/blog/log4shellcve-2021-44228/</guid>
+      <description>First of all to understand the vulnerability we should reverse it. This blog will Answer these Questions
+1- What is log4j</description>
+    </item>
+    
+    <item>
+      <title>Blind SQL with Python</title>
+      <link>https://dragonpwn.github.io/blog/blind-sql/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/blog/blind-sql/</guid>
+      <description>In this blog we will solve portswigger labs for Blind SQL injection with python
+What is Blind SQL? It&amp;rsquo;s type of SQL injection happens when the web application is vulnerable but the response doesn&amp;rsquo;t contain results signify of any database errors.</description>
+    </item>
+    
+    <item>
+      <title>PickelC2-Bot</title>
+      <link>https://dragonpwn.github.io/blog/picklec2-bot/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/blog/picklec2-bot/</guid>
+      <description>PickleC2-Bot This discord bot will help you to control your target through PickleC2
+Download
+WHAT&amp;rsquo;s a PickleC2? PickleC2 is a simple C2 framework written in python3 used to help the community in Penetration Testers in their red teaming engagements.</description>
+    </item>
+    
+    <item>
+      <title>Active Directory Enumeration</title>
+      <link>https://dragonpwn.github.io/blog/domain-enumeration/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/blog/domain-enumeration/</guid>
+      <description>In this part we will discus Domain Enumration using PowerView or ADModule and I&amp;rsquo;ll use PowerView.
+let&amp;rsquo;s import it
+PS C:\Users\adlab&amp;gt; .</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Active Directory</title>
+      <link>https://dragonpwn.github.io/blog/active-directory-intro/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/blog/active-directory-intro/</guid>
+      <description>Active Directory (AD): Its a directory service used to managed windows network, Store the information on the network and makes it easily available to users and admin.</description>
+    </item>
+    
+    <item>
+      <title>Search Result</title>
+      <link>https://dragonpwn.github.io/search/</link>
+      <pubDate>Mon, 24 Sep 2018 11:07:10 +0600</pubDate>
+      
+      <guid>https://dragonpwn.github.io/search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://dragonpwn.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/about/</guid>
+      <description>A Cyber Security Engineer with over 2 years experience, I made this blog for publishing a blog posts and writups about hacking just for fun.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://dragonpwn.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elements</title>
+      <link>https://dragonpwn.github.io/elements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/elements/</guid>
+      <description>Heading example Here is example of hedings. You can use this heading by following markdownify rules. For example: use # for heading 1 and use ###### for heading 6.</description>
+    </item>
+    
+    <item>
+      <title>No Search Found</title>
+      <link>https://dragonpwn.github.io/404/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/404/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Privacy</title>
+      <link>https://dragonpwn.github.io/privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/privacy/</guid>
+      <description>Responsibility of Contributors Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat quisque aliquam sagittis.</description>
+    </item>
+    
+    <item>
+      <title>Terms And Conditions</title>
+      <link>https://dragonpwn.github.io/terms-conditions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/terms-conditions/</guid>
+      <description>Responsibility of Contributors Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat quisque aliquam sagittis.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sql Injection on Dragon Pwn</title>
+    <link>https://dragonpwn.github.io/tags/sql-injection/</link>
+    <description>Recent content in Sql Injection on Dragon Pwn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 20 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dragonpwn.github.io/tags/sql-injection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blind SQL with Python</title>
+      <link>https://dragonpwn.github.io/blog/blind-sql/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/blog/blind-sql/</guid>
+      <description>In this blog we will solve portswigger labs for Blind SQL injection with python
+What is Blind SQL? It&amp;rsquo;s type of SQL injection happens when the web application is vulnerable but the response doesn&amp;rsquo;t contain results signify of any database errors.</description>
+    </item>
+    
+  </channel>
+</rss>

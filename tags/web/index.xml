@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Dragon Pwn</title>
+    <link>https://dragonpwn.github.io/tags/web/</link>
+    <description>Recent content in Web on Dragon Pwn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 17 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dragonpwn.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Log4Shell (CVE-2021-44228)</title>
+      <link>https://dragonpwn.github.io/blog/log4shellcve-2021-44228/</link>
+      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/blog/log4shellcve-2021-44228/</guid>
+      <description>First of all to understand the vulnerability we should reverse it. This blog will Answer these Questions
+1- What is log4j</description>
+    </item>
+    
+    <item>
+      <title>Blind SQL with Python</title>
+      <link>https://dragonpwn.github.io/blog/blind-sql/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/blog/blind-sql/</guid>
+      <description>In this blog we will solve portswigger labs for Blind SQL injection with python
+What is Blind SQL? It&amp;rsquo;s type of SQL injection happens when the web application is vulnerable but the response doesn&amp;rsquo;t contain results signify of any database errors.</description>
+    </item>
+    
+  </channel>
+</rss>
