@@ -5,7 +5,25 @@
     <link>https://dragonpwn.github.io/categories/</link>
     <description>Recent content in Categories on Dragon Pwn</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 17 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dragonpwn.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dragonpwn.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Active-Directory</title>
+      <link>https://dragonpwn.github.io/categories/active-directory/</link>
+      <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/categories/active-directory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://dragonpwn.github.io/categories/network/</link>
+      <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/categories/network/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CVEs</title>
       <link>https://dragonpwn.github.io/categories/cves/</link>
@@ -57,24 +75,6 @@
       <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://dragonpwn.github.io/categories/redteaming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Active-Directory</title>
-      <link>https://dragonpwn.github.io/categories/active-directory/</link>
-      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://dragonpwn.github.io/categories/active-directory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Network</title>
-      <link>https://dragonpwn.github.io/categories/network/</link>
-      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://dragonpwn.github.io/categories/network/</guid>
       <description></description>
     </item>
     

